@@ -46,7 +46,7 @@ export default function Services() {
   ];
 
   return (
-    <div style={{ minHeight: '100vh', background: '#FFFFFF' }}>
+    <div className="site-page" style={{ minHeight: '100vh', background: '#FFFFFF' }}>
       <Header />
 
       {/* Hero Section */}

@@ -748,3 +748,110 @@
     padding: 10px 12px !important;
   }
 }
+
+/* Mobile readability layer: applies only below Tailwind's md breakpoint.
+   Desktop styles are intentionally untouched. */
+@media (max-width: 767px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .site-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Inline desktop sections use 40px side padding throughout the legacy pages. */
+  .site-page section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .site-page section > div {
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Legacy pages were authored with inline multi-column desktop grids.
+     Collapse those grids only on small screens so content never squeezes or overflows. */
+  .site-page section [style*="display: grid"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.25rem !important;
+    min-width: 0 !important;
+  }
+
+  .site-page h1,
+  .site-page h2,
+  .site-page h3,
+  .site-page h4,
+  .site-page p,
+  .site-page li,
+  .site-page a,
+  .site-page button,
+  .site-page td,
+  .site-page th {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .site-page h1 {
+    font-size: clamp(1.75rem, 8vw, 2.25rem) !important;
+    line-height: 1.35 !important;
+  }
+
+  .site-page h2 {
+    font-size: clamp(1.5rem, 7vw, 2rem) !important;
+    line-height: 1.4 !important;
+  }
+
+  .site-page h3,
+  .site-page h4 {
+    line-height: 1.45 !important;
+  }
+
+  /* Desktop copy often contains manual <br> tags for line composition.
+     Let body copy wrap naturally on narrow screens. Heading line breaks are preserved. */
+  .site-page p br,
+  .site-page li br {
+    display: none;
+  }
+
+  .site-page p {
+    line-height: 1.8 !important;
+  }
+
+  .site-page img,
+  .site-page video,
+  .site-page iframe {
+    max-width: 100%;
+  }
+
+  .site-page a,
+  .site-page button {
+    min-height: 44px;
+  }
+
+  /* Keep floating application/proposal CTAs inside the viewport on phones. */
+  .site-page a[style*="position: fixed"][style*="bottom"] {
+    left: 1rem !important;
+    right: 1rem !important;
+    bottom: 1rem !important;
+    width: auto !important;
+    max-width: none !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Wide tables remain scrollable instead of compressing text into unreadable columns. */
+  .site-page table {
+    min-width: 620px;
+  }
+}
+

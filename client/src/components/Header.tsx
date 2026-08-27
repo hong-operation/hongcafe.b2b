@@ -8,8 +8,8 @@ export default function Header() {
   const [isMobilePartnershipOpen, setIsMobilePartnershipOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/94 backdrop-blur-sm border-b border-[rgba(200,169,122,0.18)]" style={{ height: '60px' }}>
-      <div className="px-10 h-full flex items-center justify-between">
+    <header className="site-header fixed top-0 left-0 right-0 z-50 bg-white/94 backdrop-blur-sm border-b border-[rgba(200,169,122,0.18)]" style={{ height: '60px' }}>
+      <div className="px-4 md:px-10 h-full flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <img src={`${import.meta.env.BASE_URL}hongcafe_logo.png`} alt="홍카페 BI" className="h-7 w-auto" />
@@ -92,7 +92,7 @@ export default function Header() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-[rgba(200,169,122,0.18)]">
-          <nav className="px-10 py-4 flex flex-col gap-4">
+          <nav className="px-4 md:px-10 py-4 flex flex-col gap-4">
             <Link 
               href="/about" 
               className="text-[#888] hover:text-[#C8A97A] transition-colors text-xs font-normal"

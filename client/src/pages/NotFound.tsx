@@ -10,7 +10,7 @@ export default function NotFound() {
   };
 
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
+    <div className="site-page min-h-screen bg-white" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
       <Header />
 
       {/* 404 Section */}

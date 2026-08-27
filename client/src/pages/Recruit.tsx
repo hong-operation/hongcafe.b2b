@@ -22,7 +22,7 @@ export default function Recruit() {
   }, []);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#FFFFFF' }}>
+    <div className="site-page" style={{ minHeight: '100vh', background: '#FFFFFF' }}>
       <Header />
 
       {/* Hero Section */}
@@ -358,7 +358,7 @@ export default function Recruit() {
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <h3
             style={{
-              fontSize: '14px',
+              fontSize: 'clamp(24px, 2.5vw, 32px)',
               fontWeight: 600,
               color: '#0E0E0E',
               marginBottom: '32px'
