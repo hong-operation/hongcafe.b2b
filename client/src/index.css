@@ -1,0 +1,750 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Hongcafe Brand Colors - Gold Palette */
+  --gold: #C8A97A;
+  --gold-pale: #F9F3E8;
+  --gold-dark: #9A7850;
+  --ink: #0E0E0E;
+  --ink2: #2C2C2C;
+  --muted: #888;
+  --faint: #F5F4F1;
+  --line: rgba(200,169,122,0.18);
+  --white: #FFFFFF;
+  
+  --primary: #C8A97A; /* Gold */
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #C8A97A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --chart-1: #C8A97A;
+  --chart-2: #D4B896;
+  --chart-3: #9A7850;
+  --chart-4: #7A5F3F;
+  --chart-5: #5A4430;
+  --radius: 0.125rem; /* 2px - sharp corners */
+  --background: #FFFFFF;
+  --foreground: #0E0E0E;
+  --card: #FFFFFF;
+  --card-foreground: #0E0E0E;
+  --popover: #FFFFFF;
+  --popover-foreground: #0E0E0E;
+  --secondary: #F9F3E8; /* Gold Pale */
+  --secondary-foreground: #0E0E0E;
+  --muted: #888888;
+  --muted-foreground: #888888;
+  --accent: #C8A97A;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(200,169,122,0.18);
+  --input: #F5F4F1;
+  --ring: #C8A97A;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0E0E0E;
+  --sidebar-accent: #F9F3E8;
+  --sidebar-accent-foreground: #0E0E0E;
+  --sidebar-border: rgba(200,169,122,0.18);
+  --sidebar-ring: #C8A97A;
+}
+
+.dark {
+  --primary: #C8A97A;
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #C8A97A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --background: #0E0E0E;
+  --foreground: #FFFFFF;
+  --card: #2C2C2C;
+  --card-foreground: #FFFFFF;
+  --popover: #2C2C2C;
+  --popover-foreground: #FFFFFF;
+  --secondary: #2C2C2C;
+  --secondary-foreground: #C8A97A;
+  --muted: #888888;
+  --muted-foreground: #AAAAAA;
+  --accent: #C8A97A;
+  --accent-foreground: #0E0E0E;
+  --destructive: #EF4444;
+  --destructive-foreground: #0E0E0E;
+  --border: rgba(200,169,122,0.18);
+  --input: #2C2C2C;
+  --ring: #C8A97A;
+  --chart-1: #C8A97A;
+  --chart-2: #D4B896;
+  --chart-3: #9A7850;
+  --chart-4: #7A5F3F;
+  --chart-5: #5A4430;
+  --sidebar: #2C2C2C;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-accent: #3C3C3C;
+  --sidebar-accent-foreground: #C8A97A;
+  --sidebar-border: rgba(200,169,122,0.18);
+  --sidebar-ring: #C8A97A;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif KR', serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /* Whitespace Pre-line */
+  .whitespace-pre-line {
+    white-space: pre-line !important;
+  }
+
+  /* FAQ Accordion Animation */
+  details {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  details[open] summary ~ * {
+    @apply animate-in fade-in slide-in-from-top-2 duration-300;
+  }
+
+  details summary {
+    @apply transition-colors duration-200;
+  }
+
+  details[open] summary span:last-child {
+    @apply rotate-45 transition-transform duration-300;
+  }
+
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2.5rem; /* 40px - desktop padding */
+    padding-right: 2.5rem;
+    max-width: 1080px;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  /* Reference Design Components */
+  .eyebrow {
+    font-size: 9.5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+
+  .title strong {
+    font-weight: 700;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.85;
+    max-width: 520px;
+    margin-bottom: 56px;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    padding: 13px 30px;
+    border-radius: 2px;
+    font-size: 13.5px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-dark);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    padding: 13px 30px;
+    border-radius: 2px;
+    font-size: 13.5px;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* Grid with dividers */
+  .grid-divider {
+    display: grid;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .grid-divider > * {
+    background: var(--white);
+  }
+
+  /* Animations */
+  @keyframes up {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s, transform 0.75s;
+  }
+
+  .reveal.on {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-d1 {
+    transition-delay: 0.1s;
+  }
+
+  .reveal-d2 {
+    transition-delay: 0.2s;
+  }
+
+  .reveal-d3 {
+    transition-delay: 0.3s;
+  }
+}
+
+
+/* ===== MOBILE RESPONSIVE STYLES DISABLED ===== */
+/* 모바일 환경에서도 PC 레이아웃 표시 - 미디어 쿼리 비활성화 */
+@media (max-width: 0px) {
+  /* 가로 스크롤 방지 */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  /* ===== 모바일 헤더 반응형 스타일 ===== */
+  /* 헤더 전체 레이아웃 조정 */
+  header {
+    height: auto !important;
+    min-height: 50px !important;
+  }
+
+  header > div {
+    padding: 8px 12px !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* 로고 컨테이너 */
+  header > div > a {
+    gap: 6px !important;
+  }
+
+  /* 로고 이미지 크기 축소 */
+  header img[alt="홍카페 BI"],
+  header img[src*="hongcafe_logo"] {
+    height: 22px !important;
+    width: auto !important;
+  }
+
+  /* 로고 텍스트 크기 축소 */
+  header > div > a > span {
+    font-size: 12px !important;
+  }
+
+  /* 모바일 메뉴 버튼 숨기기 */
+  header button[class*="md:hidden"] {
+    display: none !important;
+  }
+
+  /* 모바일 메뉴 컨테이너 - 전체 너비 */
+  header > div:last-child {
+    width: 100% !important;
+    border-top: 1px solid rgba(200,169,122,0.18) !important;
+    margin-top: 8px !important;
+    padding-top: 8px !important;
+  }
+
+  /* 드롭다운 메뉴 가시성 - 모든 드롭다운 표시 */
+  header nav > div {
+    position: relative !important;
+  }
+
+  header nav > div > div {
+    position: static !important;
+    width: auto !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+  }
+
+  header nav > div > div > a {
+    display: inline-flex !important;
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+  }
+
+  /* ===== 모바일 메뉴 - PC와 동일하게 유지 ===== */
+  /* 모바일에서도 PC 메뉴 구조 유지 - 상태 관리 존중 */
+  header nav {
+    /* PC 레이아웃 유지 - 모바일에서 CSS로 강제하지 않음 */
+  }
+
+  /* 모바일 메뉴 컨테이너 - 가로 스크롤 */
+  header > div:last-child nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  /* 모바일 메뉴 링크 - 가로 나열 */
+  header > div:last-child nav > * {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 4px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  header > div:last-child nav a,
+  header > div:last-child nav button {
+    display: inline-flex !important;
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* 모바일 드롭다운 - 상태 관리 존중 */
+  header > div:last-child nav > div > div {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+  }
+
+  header > div:last-child nav > div > div > a {
+    display: inline-flex !important;
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+  }
+
+  /* Hero Section */
+  [style*="minHeight: '100vh'"] {
+    padding: 50px 16px 40px !important;
+    margin-top: 40px !important;
+  }
+
+  /* Generic padding adjustments */
+  [style*="padding: '100px 40px'"] {
+    padding: 50px 16px !important;
+  }
+
+  [style*="padding: '80px 40px'"] {
+    padding: 40px 16px !important;
+  }
+
+  [style*="padding: '60px 40px'"] {
+    padding: 32px 16px !important;
+  }
+
+  /* Text sizing for mobile */
+  [style*="fontSize: 'clamp(38px, 5.5vw, 72px)'"] {
+    font-size: 28px !important;
+  }
+
+  [style*="fontSize: 'clamp(28px, 3.5vw, 48px)'"] {
+    font-size: 22px !important;
+  }
+
+  [style*="fontSize: 'clamp(24px, 3vw, 42px)'"] {
+    font-size: 18px !important;
+  }
+
+  /* Reduce gap in flex containers */
+  [style*="gap: '40px'"] {
+    gap: 16px !important;
+  }
+
+  [style*="gap: '32px'"] {
+    gap: 14px !important;
+  }
+
+  [style*="gap: '24px'"] {
+    gap: 12px !important;
+  }
+
+  /* Grid layout adjustments - 가로 스크롤 유지 */
+  [style*="gridTemplateColumns: 'repeat(3'"] {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    flex-wrap: nowrap !important;
+    gap: 16px !important;
+  }
+
+  [style*="gridTemplateColumns: 'repeat(3'"] > * {
+    flex: 0 0 calc(100% - 16px) !important;
+    min-width: calc(100% - 16px) !important;
+  }
+
+  [style*="gridTemplateColumns: 'repeat(2'"] {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    flex-wrap: nowrap !important;
+    gap: 16px !important;
+  }
+
+  [style*="gridTemplateColumns: 'repeat(2'"] > * {
+    flex: 0 0 calc(50% - 8px) !important;
+    min-width: calc(50% - 8px) !important;
+  }
+
+  /* Reduce margins */
+  [style*="marginBottom: '56px'"] {
+    margin-bottom: 28px !important;
+  }
+
+  [style*="marginBottom: '48px'"] {
+    margin-bottom: 24px !important;
+  }
+
+  [style*="marginBottom: '40px'"] {
+    margin-bottom: 20px !important;
+  }
+
+  /* 버튼 터치하기 좋은 크기 */
+  button,
+  a[href],
+  [role="button"] {
+    min-height: 48px !important;
+    min-width: 48px !important;
+    padding: 12px 16px !important;
+  }
+
+  /* Button specific styling */
+  [style*="padding: '13px 30px'"] {
+    padding: 14px 20px !important;
+    font-size: 13px !important;
+  }
+
+  /* Table adjustments */
+  table {
+    font-size: 13px !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  table th,
+  table td {
+    padding: 12px 10px !important;
+  }
+
+  /* Navigation adjustments */
+  nav {
+    padding: 12px 16px !important;
+  }
+
+  /* Footer adjustments */
+  footer {
+    padding: 32px 16px !important;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* Reduce line height for better mobile spacing */
+  [style*="lineHeight: 1.9"] {
+    line-height: 1.6 !important;
+  }
+
+  [style*="lineHeight: 1.8"] {
+    line-height: 1.6 !important;
+  }
+
+  /* Modal/Popup adjustments */
+  [role="dialog"] {
+    width: 90vw !important;
+    max-width: 90vw !important;
+  }
+
+  /* 이미지 모바일 최적화 */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  /* Flex direction adjustments - 가로 스크롤 유지 */
+  [style*="flexDirection: 'row'"] {
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* Max width adjustments */
+  [style*="maxWidth: '1080px'"] {
+    max-width: 100% !important;
+  }
+
+  [style*="maxWidth: '500px'"] {
+    max-width: 100% !important;
+  }
+
+  /* Reduce letter spacing on mobile */
+  [style*="letterSpacing: '2px'"] {
+    letter-spacing: 1px !important;
+  }
+
+  [style*="letterSpacing: '3px'"] {
+    letter-spacing: 1.5px !important;
+  }
+
+  [style*="letterSpacing: '3.5px'"] {
+    letter-spacing: 1.5px !important;
+  }
+
+  /* Reduce opacity for better mobile readability */
+  [style*="opacity: 0.7"] {
+    opacity: 0.8 !important;
+  }
+
+  /* 모바일 고정 버튼 위치 조정 */
+  [style*="bottom: 24px"] {
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+
+  /* 모바일 헤더 최적화 */
+  header {
+    padding: 12px 16px !important;
+  }
+}
+
+/* 640px 이하: 작은 모바일 - 비활성화 */
+@media (max-width: 0px) {
+  /* 가로 스크롤 방지 */
+  html, body {
+    overflow-x: hidden !important;
+  }
+
+  /* Extra aggressive padding reduction for very small screens */
+  [style*="padding: '100px 40px'"] {
+    padding: 40px 12px !important;
+  }
+
+  [style*="padding: '80px 40px'"] {
+    padding: 32px 12px !important;
+  }
+
+  /* Further reduce font sizes */
+  [style*="fontSize: 'clamp(38px, 5.5vw, 72px)'"] {
+    font-size: 24px !important;
+  }
+
+  [style*="fontSize: 'clamp(28px, 3.5vw, 48px)'"] {
+    font-size: 18px !important;
+  }
+
+  /* Reduce gaps even more */
+  [style*="gap: '40px'"] {
+    gap: 12px !important;
+  }
+
+  /* Reduce margins */
+  [style*="marginBottom: '56px'"] {
+    margin-bottom: 20px !important;
+  }
+
+  [style*="marginBottom: '48px'"] {
+    margin-bottom: 16px !important;
+  }
+
+  /* Smaller button padding */
+  button,
+  a[href],
+  [role="button"] {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    padding: 10px 14px !important;
+  }
+
+  [style*="padding: '13px 30px'"] {
+    padding: 12px 16px !important;
+    font-size: 12px !important;
+  }
+
+  /* Reduce table font */
+  table {
+    font-size: 12px !important;
+  }
+
+  table th,
+  table td {
+    padding: 10px 8px !important;
+  }
+
+  /* Reduce footer padding */
+  footer {
+    padding: 24px 12px !important;
+  }
+
+  /* Ensure full width on small screens */
+  [style*="maxWidth: '1080px'"] {
+    width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* 모바일 고정 버튼 위치 조정 */
+  [style*="bottom: 24px"] {
+    bottom: 12px !important;
+    right: 12px !important;
+  }
+
+  /* 모바일 헤더 최적화 */
+  header {
+    padding: 10px 12px !important;
+  }
+}
