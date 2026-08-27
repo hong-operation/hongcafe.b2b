@@ -25,27 +25,27 @@ export default function UniTaro() {
 
   const galleryImages = [
     {
-      src: "https://app.notion.com/image/attachment%3A7535bce3-5f8a-4ee2-983c-7277cfa06952%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C2.png?id=3c953279-2277-805d-b9bf-f2d055355146&table=block&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=31ad872b-594c-81ae-b42f-00029a33de05&cache=v2&imgBuildSrc=requestProxiedImageUrl",
+      src: "https://www.notion.so/image/attachment%3A7535bce3-5f8a-4ee2-983c-7277cfa06952%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C2.png?table=block&id=3c953279-2277-805d-b9bf-f2d055355146&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=&cache=v2",
       title: "타로 교육 프로그램",
     },
     {
-      src: "https://app.notion.com/image/attachment%3A72d4a700-7556-4d39-bf94-a2b01eeebf6e%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C3.png?id=3c953279-2277-80b3-975c-c47dd7270033&table=block&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=31ad872b-594c-81ae-b42f-00029a33de05&cache=v2&imgBuildSrc=requestProxiedImageUrl",
+      src: "https://www.notion.so/image/attachment%3A72d4a700-7556-4d39-bf94-a2b01eeebf6e%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C3.png?table=block&id=3c953279-2277-80b3-975c-c47dd7270033&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=&cache=v2",
       title: "학생 커뮤니티 활동",
     },
     {
-      src: "https://app.notion.com/image/attachment%3Aa9cea4b8-ed16-42e5-a9dc-c8d4a9566eaa%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C4.png?id=3c953279-2277-8078-a26f-fb7f6f9cb0c2&table=block&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=31ad872b-594c-81ae-b42f-00029a33de05&cache=v2&imgBuildSrc=requestProxiedImageUrl",
+      src: "https://www.notion.so/image/attachment%3Aa9cea4b8-ed16-42e5-a9dc-c8d4a9566eaa%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C4.png?table=block&id=3c953279-2277-8078-a26f-fb7f6f9cb0c2&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=&cache=v2",
       title: "타로 카드 소개",
     },
     {
-      src: "https://app.notion.com/image/attachment%3A96fe6268-ff0e-4707-bccc-00fa2b728fd3%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C1.png?id=3c953279-2277-805c-9cb9-e9f12db64815&table=block&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=31ad872b-594c-81ae-b42f-00029a33de05&cache=v2&imgBuildSrc=requestProxiedImageUrl",
+      src: "https://www.notion.so/image/attachment%3A96fe6268-ff0e-4707-bccc-00fa2b728fd3%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C1.png?table=block&id=3c953279-2277-805c-9cb9-e9f12db64815&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=&cache=v2",
       title: "심리 상담 세션",
     },
     {
-      src: "https://app.notion.com/image/attachment%3A2303e317-9547-4e2d-b21e-f99a7da3c6c6%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C6.jpg?id=3c953279-2277-8007-93b7-e50abebcbcd1&table=block&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=31ad872b-594c-81ae-b42f-00029a33de05&cache=v2&imgBuildSrc=requestProxiedImageUrl",
+      src: "https://www.notion.so/image/attachment%3A2303e317-9547-4e2d-b21e-f99a7da3c6c6%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C6.jpg?table=block&id=3c953279-2277-8007-93b7-e50abebcbcd1&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=&cache=v2",
       title: "협업 대학 활동",
     },
     {
-      src: "https://app.notion.com/image/attachment%3A2e4bc20f-12d6-492c-9036-88bfd940708e%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C6.png?id=3c953279-2277-80e4-bdb9-d08e60c7c0e4&table=block&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=31ad872b-594c-81ae-b42f-00029a33de05&cache=v2&imgBuildSrc=requestProxiedImageUrl",
+      src: "https://www.notion.so/image/attachment%3A2e4bc20f-12d6-492c-9036-88bfd940708e%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C6.png?table=block&id=3c953279-2277-80e4-bdb9-d08e60c7c0e4&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=&cache=v2",
       title: "프로그램 참여자",
     },
   ];
@@ -387,9 +387,6 @@ export default function UniTaro() {
                 <img
                   src={img.src}
                   alt={img.title}
-                  loading="lazy"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
                   style={{
                     position: 'absolute',
                     top: 0,
@@ -468,7 +465,6 @@ export default function UniTaro() {
           <img
             src={galleryImages[selectedImageIdx].src}
             alt="Modal"
-            referrerPolicy="no-referrer"
             style={{
               maxWidth: '90%',
               maxHeight: '90%',
