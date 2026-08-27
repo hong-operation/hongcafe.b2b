@@ -25,27 +25,27 @@ export default function UniTaro() {
 
   const galleryImages = [
     {
-      src: "https://hongcafe-b2b-ayjaunub.manus.space/manus-storage/unitaro1_5afa0bef.png",
+      src: "https://app.notion.com/image/attachment%3A6bb787bc-0368-4177-9531-a4012eab6dcf%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C4.png?table=block&id=3c953279-2277-80bd-b8c0-f0117698d2a2&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=31ad872b-594c-81ae-b42f-00029a33de05&cache=v2&imgBuildSrc=requestProxiedImageUrl",
       title: "타로 교육 프로그램",
     },
     {
-      src: "https://hongcafe-b2b-ayjaunub.manus.space/manus-storage/unitaro2_76a85b4b.png",
+      src: "https://app.notion.com/image/attachment%3A069c1c5e-d54f-4d84-a77f-a25400d2d746%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C3.png?table=block&id=3c953279-2277-801a-a8b7-df8ded4a3604&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=31ad872b-594c-81ae-b42f-00029a33de05&cache=v2&imgBuildSrc=requestProxiedImageUrl",
       title: "학생 커뮤니티 활동",
     },
     {
-      src: "https://hongcafe-b2b-ayjaunub.manus.space/manus-storage/unitaro3_2de1e8f3.png",
+      src: "https://app.notion.com/image/attachment%3A7676a0c7-2c29-46e4-a241-4cab302a8eae%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C2.png?table=block&id=3c953279-2277-80e5-931e-e0d97cd61514&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=31ad872b-594c-81ae-b42f-00029a33de05&cache=v2&imgBuildSrc=requestProxiedImageUrl",
       title: "타로 카드 소개",
     },
     {
-      src: "https://hongcafe-b2b-ayjaunub.manus.space/manus-storage/unitaro4_12f0a850.png",
+      src: "https://app.notion.com/image/attachment%3A90d10d18-1861-4f26-a4a9-70633fccd06c%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C1.png?table=block&id=3c953279-2277-8006-b2b2-c90d003a9601&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=31ad872b-594c-81ae-b42f-00029a33de05&cache=v2&imgBuildSrc=requestProxiedImageUrl",
       title: "심리 상담 세션",
     },
     {
-      src: "https://hongcafe-b2b-ayjaunub.manus.space/manus-storage/unitaro5_7a637b77.png",
+      src: "https://app.notion.com/image/attachment%3Ad734ddef-2b0b-43c2-b3af-20764fafcf52%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C5.png?table=block&id=3c953279-2277-80ee-b499-ee47fc34d067&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=31ad872b-594c-81ae-b42f-00029a33de05&cache=v2&imgBuildSrc=requestProxiedImageUrl",
       title: "협업 대학 활동",
     },
     {
-      src: "https://hongcafe-b2b-ayjaunub.manus.space/manus-storage/unitaro6_fa2c6e13.png",
+      src: "https://app.notion.com/image/attachment%3A6fdc0a30-5ba3-4fde-a129-b8fac08c365c%3A%EC%9C%A0%EB%8B%88%ED%83%80%EB%A1%9C6.png?table=block&id=3c953279-2277-80c1-bee7-fdcf63f8b09a&spaceId=e7653279-2277-81ad-86c9-00037a3d3339&width=2000&userId=31ad872b-594c-81ae-b42f-00029a33de05&cache=v2&imgBuildSrc=requestProxiedImageUrl",
       title: "프로그램 참여자",
     },
   ];

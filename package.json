@@ -2,7 +2,6 @@
   "name": "hongcafe-b2b-web",
   "version": "1.0.0",
   "type": "module",
-  "license": "MIT",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
@@ -85,5 +84,6 @@
     "overrides": {
       "tailwindcss>nanoid": "3.3.7"
     }
-  }
+  },
+  "private": true
 }

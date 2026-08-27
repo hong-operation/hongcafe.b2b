@@ -294,7 +294,7 @@ export default function Home() {
                 link: '/recruit'
               }
             ].map((prog, idx) => (
-              <a
+              <Link
                 key={idx}
                 href={prog.link}
                 style={{
@@ -366,7 +366,7 @@ export default function Home() {
                 <div style={{ fontSize: '11.5px', color: '#C8A97A', display: 'flex', alignItems: 'center', gap: '6px' }}>
                   자세히 보기 <span style={{ transition: 'transform 0.2s' }}>→</span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

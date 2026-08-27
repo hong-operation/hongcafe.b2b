@@ -951,7 +951,7 @@ export default function Partnership() {
                   cursor: 'pointer'
                 }}
                 onClick={() =>
-                  window.open(cases[selectedCase].images[currentImageIndex], '_blank')
+                  window.open(cases[selectedCase].images[currentImageIndex], '_blank', 'noopener,noreferrer')
                 }
               >
                 <img
@@ -1006,7 +1006,7 @@ export default function Partnership() {
                   </span>
                   <button
                     onClick={() =>
-                      window.open(cases[selectedCase].images[currentImageIndex], '_blank')
+                      window.open(cases[selectedCase].images[currentImageIndex], '_blank', 'noopener,noreferrer')
                     }
                     style={{
                       fontSize: '12px',
