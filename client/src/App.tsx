@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Partnership from "./pages/Partnership";
+import ImageViewer from "./pages/ImageViewer";
 import UniTaro from "./pages/UniTaro";
 import Recruit from "./pages/Recruit";
 
@@ -42,6 +43,7 @@ function AppRoutes() {
       <Route path="/unitaro" component={UniTaro} />
       <Route path="/recruit" component={Recruit} />
       <Route path="/404" component={NotFound} />
+      <Route path="/image-viewer" component={ImageViewer} />
       <Route component={NotFound} />
     </Switch>
   );

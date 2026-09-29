@@ -19,7 +19,7 @@ export default function MobileUniTaro() {
 
     <MobileSection tone="soft"><MobileEyebrow>What We Provide</MobileEyebrow><MobileTitle>유니타로가 <strong>제공하는 것</strong></MobileTitle><div className="m-stack">{[["📚","타로 교육","체계적인 타로 이론 및 실습 교육"],["🤝","커뮤니티","학생 동아리 및 네트워크 지원"],["💡","심리 상담","전문 상담사와의 협업 기회"]].map(([icon,title,desc])=><MobileCard className="m-inline-card" key={title}><span className="m-icon">{icon}</span><div><h3>{title}</h3><p>{desc}</p></div></MobileCard>)}</div></MobileSection>
 
-    <MobileSection><MobileEyebrow>Collaboration Cases</MobileEyebrow><MobileTitle>협업 <strong>사례</strong></MobileTitle><div className="m-gallery-grid">{gallery.map(([src,title])=><a className="m-gallery-card" href={src} target="_blank" rel="noopener noreferrer" key={src}><img src={src} alt={title} loading="lazy" /><span>{title}</span></a>)}</div></MobileSection>
+    <MobileSection><MobileEyebrow>Collaboration Cases</MobileEyebrow><MobileTitle>협업 <strong>사례</strong></MobileTitle><div className="m-gallery-grid">{gallery.map(([src,title])=><a className="m-gallery-card" href={`${import.meta.env.BASE_URL}image-viewer?src=${encodeURIComponent(src)}&title=${encodeURIComponent(title)}`} target="_blank" rel="noopener noreferrer" key={src} aria-label={`${title} 이미지 새 창에서 보기`}><img src={src} alt={title} loading="lazy" /></a>)}</div></MobileSection>
 
     <MobileSection tone="dark" className="m-center"><MobileTitle>협업 <span className="m-gold">제안하기</span></MobileTitle><MobileLead light>함께할 관련 학과 및 동아리를 모집합니다.</MobileLead><a href="https://forms.gle/RamLCbA7SbhehbUw8" target="_blank" rel="noopener noreferrer" className="m-btn m-btn-primary">협업 제안하기</a></MobileSection>
   </MobileMain><Footer /></div>;
