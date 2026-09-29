@@ -1,17 +1,27 @@
 import { useState } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { ChevronDown, Menu, X } from "lucide-react";
 
 export default function Header() {
+  const [location] = useLocation();
   const [isPartnershipOpen, setIsPartnershipOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobilePartnershipOpen, setIsMobilePartnershipOpen] = useState(false);
+
+  const handleHomeClick = () => {
+    setIsMobileMenuOpen(false);
+    setIsMobilePartnershipOpen(false);
+
+    if (location === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="site-header fixed top-0 left-0 right-0 z-50 bg-white/94 backdrop-blur-sm border-b border-[rgba(200,169,122,0.18)]" style={{ height: '60px' }}>
       <div className="px-4 lg:px-10 h-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <Link href="/" onClick={handleHomeClick} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <img src={`${import.meta.env.BASE_URL}hongcafe_logo.png`} alt="홍카페 BI" className="h-7 w-auto" />
           <span className="font-medium text-sm text-[#0E0E0E]">홍카페 비즈니스</span>
         </Link>

@@ -1196,6 +1196,11 @@
   border-bottom: 1px solid rgba(255,255,255,.12);
 }
 
+
+.image-viewer-toolbar.is-title-hidden {
+  justify-content: flex-end;
+}
+
 .image-viewer-title {
   min-width: 0;
   overflow: hidden;
