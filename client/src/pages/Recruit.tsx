@@ -2,7 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+import MobileRecruit from "@/components/mobile/pages/MobileRecruit";
+import { useIsMobile } from "@/hooks/useMobile";
 export default function Recruit() {
+  const isMobile = useIsMobile();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -20,6 +23,8 @@ export default function Recruit() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (isMobile) return <MobileRecruit />;
 
   return (
     <div className="site-page page-recruit" style={{ minHeight: '100vh', background: '#FFFFFF' }}>

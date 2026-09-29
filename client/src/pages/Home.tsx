@@ -3,7 +3,10 @@ import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+import MobileHome from "@/components/mobile/pages/MobileHome";
+import { useIsMobile } from "@/hooks/useMobile";
 export default function Home() {
+  const isMobile = useIsMobile();
   const [scrollPosition, setScrollPosition] = useState(0);
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -15,6 +18,8 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (isMobile) return <MobileHome />;
 
   return (
     <div className="site-page page-home min-h-screen bg-white" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
@@ -276,7 +281,7 @@ export default function Home() {
                 num: 'Program 01',
                 icon: '🤝',
                 name: '파트너십',
-                desc: '가맹점 운영 및 제휴를 통한 비즈니스 기회',
+                desc: '파트너십을 통한 새로운 기회',
                 link: '/partnership'
               },
               {

@@ -2,10 +2,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
 
+import MobileContact from "@/components/mobile/pages/MobileContact";
+import { useIsMobile } from "@/hooks/useMobile";
 export default function Contact() {
+  const isMobile = useIsMobile();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  if (isMobile) return <MobileContact />;
+
   const contactInfo = [
     {
       label: "Address",

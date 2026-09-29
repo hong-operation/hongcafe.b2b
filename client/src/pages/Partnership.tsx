@@ -3,7 +3,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
+import MobilePartnership from "@/components/mobile/pages/MobilePartnership";
+import { useIsMobile } from "@/hooks/useMobile";
 export default function Partnership() {
+  const isMobile = useIsMobile();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -24,6 +27,8 @@ export default function Partnership() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (isMobile) return <MobilePartnership />;
 
   const cases = [
     {

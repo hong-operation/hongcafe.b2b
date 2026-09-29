@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <header className="site-header fixed top-0 left-0 right-0 z-50 bg-white/94 backdrop-blur-sm border-b border-[rgba(200,169,122,0.18)]" style={{ height: '60px' }}>
-      <div className="px-4 md:px-10 h-full flex items-center justify-between">
+      <div className="px-4 lg:px-10 h-full flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <img src={`${import.meta.env.BASE_URL}hongcafe_logo.png`} alt="홍카페 BI" className="h-7 w-auto" />
@@ -17,7 +17,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-7">
           <Link href="/about" className="text-[#888] hover:text-[#C8A97A] transition-colors text-xs font-normal" style={{ letterSpacing: '0.2px' }}>
             홍카페 소개
           </Link>
@@ -70,7 +70,7 @@ export default function Header() {
         </nav>
 
         {/* CTA Button */}
-        <div className="hidden md:flex items-center gap-4" style={{ visibility: 'hidden' }}>
+        <div className="hidden lg:flex items-center gap-4" style={{ visibility: 'hidden' }}>
           <Link href="/contact" className="text-xs font-medium px-5 py-2 border border-[#C8A97A] text-[#C8A97A] hover:bg-[#C8A97A] hover:text-white transition-all" style={{ borderRadius: '2px' }}>
             문의하기
           </Link>
@@ -78,7 +78,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden p-2 hover:bg-[#F9F3E8] rounded transition-colors"
+          className="lg:hidden p-2 hover:bg-[#F9F3E8] rounded transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? (
@@ -91,8 +91,8 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-[rgba(200,169,122,0.18)]">
-          <nav className="px-4 md:px-10 py-4 flex flex-col gap-4">
+        <div className="mobile-nav-menu lg:hidden bg-white border-t border-[rgba(200,169,122,0.18)]">
+          <nav className="px-4 lg:px-10 py-4 flex flex-col gap-4">
             <Link 
               href="/about" 
               className="text-[#888] hover:text-[#C8A97A] transition-colors text-xs font-normal"

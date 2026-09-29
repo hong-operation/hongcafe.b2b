@@ -3,7 +3,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
+import MobileUniTaro from "@/components/mobile/pages/MobileUniTaro";
+import { useIsMobile } from "@/hooks/useMobile";
 export default function UniTaro() {
+  const isMobile = useIsMobile();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -22,6 +25,8 @@ export default function UniTaro() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (isMobile) return <MobileUniTaro />;
 
   const galleryImages = [
     {

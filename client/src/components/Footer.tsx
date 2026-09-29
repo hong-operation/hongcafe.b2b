@@ -4,10 +4,10 @@ import { Instagram, Youtube } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="site-footer bg-[#0E0E0E] text-white py-9" style={{ borderTop: '1px solid rgba(255,255,255,.07)' }}>
-      <div className="px-4 md:px-10 max-w-[1080px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-center">
+      <div className="px-4 lg:px-10 max-w-[1080px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 items-center">
           {/* Left - Logo */}
-          <div className="flex items-center justify-center md:justify-start">
+          <div className="flex items-center justify-center lg:justify-start">
             <img src={`${import.meta.env.BASE_URL}hongcafe_logo.png`} alt="홍카페" className="h-10 w-auto" style={{ filter: 'brightness(0) invert(1)', opacity: 0.7 }} />
           </div>
 
@@ -21,7 +21,7 @@ export default function Footer() {
           </div>
 
           {/* Right - Social Media */}
-          <div className="flex gap-4 justify-center md:justify-end items-center">
+          <div className="flex gap-4 justify-center lg:justify-end items-center">
             <a
               href="https://www.instagram.com/hongcafe_official/"
               target="_blank"

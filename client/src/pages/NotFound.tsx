@@ -2,12 +2,17 @@ import { useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+import MobileNotFound from "@/components/mobile/pages/MobileNotFound";
+import { useIsMobile } from "@/hooks/useMobile";
 export default function NotFound() {
+  const isMobile = useIsMobile();
   const [, setLocation] = useLocation();
 
   const handleGoHome = () => {
     setLocation("/");
   };
+
+  if (isMobile) return <MobileNotFound />;
 
   return (
     <div className="site-page page-not-found min-h-screen bg-white" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>

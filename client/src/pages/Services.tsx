@@ -2,10 +2,15 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+import MobileServices from "@/components/mobile/pages/MobileServices";
+import { useIsMobile } from "@/hooks/useMobile";
 export default function Services() {
+  const isMobile = useIsMobile();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  if (isMobile) return <MobileServices />;
+
   const milestones = [
     { year: "2022.01", title: "고용노동부 청년 친화 강소기업 3년 연속 선정" },
     { year: "2020.01", title: "고용노동부 청년 친화 강소기업 선정" },

@@ -3,10 +3,15 @@ import { useEffect } from "react";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
 
+import MobileAbout from "@/components/mobile/pages/MobileAbout";
+import { useIsMobile } from "@/hooks/useMobile";
 export default function About() {
+  const isMobile = useIsMobile();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  if (isMobile) return <MobileAbout />;
+
   return (
     <div className="site-page page-about" style={{ minHeight: '100vh', background: '#FFFFFF' }}>
       <Header />
