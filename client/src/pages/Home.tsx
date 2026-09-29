@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="site-page min-h-screen bg-white" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
+    <div className="site-page page-home min-h-screen bg-white" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
       <Header />
 
       {/* Hero Section */}

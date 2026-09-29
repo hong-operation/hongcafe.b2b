@@ -199,7 +199,7 @@
     min-width: 0;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .container {
       padding-left: 1rem;
       padding-right: 1rem;
@@ -749,8 +749,8 @@
   }
 }
 
-/* Mobile readability layer: applies only below Tailwind's md breakpoint.
-   Desktop styles are intentionally untouched. */
+/* Mobile responsive layer: applies only below Tailwind's md breakpoint.
+   Desktop (>= 768px) keeps the original authored styles unchanged. */
 @media (max-width: 767px) {
   html,
   body,
@@ -766,7 +766,7 @@
     overflow-x: hidden;
   }
 
-  /* Inline desktop sections use 40px side padding throughout the legacy pages. */
+  /* Common mobile safeguards only. No desktop layout values are overridden here. */
   .site-page section {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
@@ -777,22 +777,12 @@
     min-width: 0 !important;
   }
 
-  /* Legacy pages were authored with inline multi-column desktop grids.
-     Collapse those grids only on small screens so content never squeezes or overflows. */
-  .site-page section [style*="display: grid"] {
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 1.25rem !important;
-    min-width: 0 !important;
-  }
-
   .site-page h1,
   .site-page h2,
   .site-page h3,
   .site-page h4,
   .site-page p,
   .site-page li,
-  .site-page a,
-  .site-page button,
   .site-page td,
   .site-page th {
     word-break: keep-all;
@@ -814,15 +804,8 @@
     line-height: 1.45 !important;
   }
 
-  /* Desktop copy often contains manual <br> tags for line composition.
-     Let body copy wrap naturally on narrow screens. Heading line breaks are preserved. */
-  .site-page p br,
-  .site-page li br {
-    display: none;
-  }
-
   .site-page p {
-    line-height: 1.8 !important;
+    line-height: 1.75 !important;
   }
 
   .site-page img,
@@ -831,13 +814,66 @@
     max-width: 100%;
   }
 
-  .site-page a,
-  .site-page button {
+  .site-page section a,
+  .site-page section button {
     min-height: 44px;
   }
 
-  /* Keep floating application/proposal CTAs inside the viewport on phones. */
-  .site-page a[style*="position: fixed"][style*="bottom"] {
+  /* Existing legacy pages: scope the old single-column fallback by page instead of
+     applying it to every grid in the whole site. */
+  .page-home section [style*="display: grid"],
+  .page-about section [style*="display: grid"],
+  .page-services section [style*="display: grid"],
+  .page-contact section [style*="display: grid"],
+  .page-partnership section [style*="display: grid"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.25rem !important;
+    min-width: 0 !important;
+  }
+
+  /* ===== UniTaro mobile only ===== */
+  .page-unitaro .unitaro-hero {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2rem !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    margin-top: 60px !important;
+  }
+
+  .page-unitaro .unitaro-overview-card {
+    padding: 1.5rem !important;
+  }
+
+  .page-unitaro .unitaro-provide-section,
+  .page-unitaro .unitaro-gallery-section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .page-unitaro .unitaro-support-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .page-unitaro .unitaro-support-grid > div {
+    padding: 1.5rem !important;
+  }
+
+  .page-unitaro .unitaro-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.75rem !important;
+  }
+
+  .page-unitaro .mobile-flow-copy br {
+    display: none;
+  }
+
+  .page-unitaro .unitaro-cta-section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .page-unitaro .unitaro-sticky-cta {
     left: 1rem !important;
     right: 1rem !important;
     bottom: 1rem !important;
@@ -849,9 +885,110 @@
     padding-right: 1rem !important;
   }
 
-  /* Wide tables remain scrollable instead of compressing text into unreadable columns. */
-  .site-page table {
-    min-width: 620px;
+  /* ===== Recruit mobile only ===== */
+  .page-recruit .recruit-hero {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2rem !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    margin-top: 60px !important;
+  }
+
+  .page-recruit .recruit-grade-card {
+    padding: 1.5rem !important;
+  }
+
+  .page-recruit .recruit-grade-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+  }
+
+  .page-recruit .recruit-free-notice {
+    align-items: flex-start !important;
+    line-height: 1.65 !important;
+  }
+
+  .page-recruit .mobile-flow-copy br,
+  .page-recruit .recruit-service-grid p br,
+  .page-recruit .recruit-income-grid p br,
+  .page-recruit .recruit-process-grid p br {
+    display: none;
+  }
+
+  .page-recruit .recruit-section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .page-recruit .recruit-section h2 {
+    margin-bottom: 2rem !important;
+  }
+
+  .page-recruit .recruit-service-grid,
+  .page-recruit .recruit-benefits-grid,
+  .page-recruit .recruit-income-grid,
+  .page-recruit .recruit-payment-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .page-recruit .recruit-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.75rem !important;
+  }
+
+  .page-recruit .recruit-income-title {
+    font-size: 1.75rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1.75rem !important;
+  }
+
+  .page-recruit .recruit-grade-table-wrap {
+    width: 100%;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 2rem !important;
+  }
+
+  .page-recruit .recruit-grade-table-wrap table {
+    min-width: 640px;
+  }
+
+  .page-recruit .recruit-cta-section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .page-recruit .recruit-cta-section > div > div {
+    width: 100%;
+  }
+
+  .page-recruit .recruit-cta-section a {
+    width: min(100%, 320px);
+    text-align: center;
+  }
+
+  .page-recruit .recruit-sticky-cta {
+    left: 1rem !important;
+    right: 1rem !important;
+    bottom: 1rem !important;
+    width: auto !important;
+    max-width: none !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Partnership tables stay readable by scrolling instead of compressing columns. */
+  .page-partnership table {
+    min-width: 720px;
   }
 }
 
+@media (max-width: 420px) {
+  .page-unitaro .unitaro-gallery-grid,
+  .page-recruit .recruit-process-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}

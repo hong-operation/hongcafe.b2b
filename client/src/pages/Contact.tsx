@@ -27,7 +27,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="site-page" style={{ minHeight: '100vh', background: '#FFFFFF' }}>
+    <div className="site-page page-contact" style={{ minHeight: '100vh', background: '#FFFFFF' }}>
       <Header />
 
       {/* Hero Section */}

@@ -22,11 +22,12 @@ export default function Recruit() {
   }, []);
 
   return (
-    <div className="site-page" style={{ minHeight: '100vh', background: '#FFFFFF' }}>
+    <div className="site-page page-recruit" style={{ minHeight: '100vh', background: '#FFFFFF' }}>
       <Header />
 
       {/* Hero Section */}
       <section
+        className="recruit-hero"
         style={{
           padding: '120px 40px 80px',
           marginTop: '60px',
@@ -77,6 +78,7 @@ export default function Recruit() {
 
           {/* Lead */}
           <p
+            className="recruit-lead mobile-flow-copy"
             style={{
               fontSize: '14px',
               color: '#888',
@@ -91,6 +93,7 @@ export default function Recruit() {
 
           {/* Free Notice */}
           <div
+            className="recruit-free-notice"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -139,6 +142,7 @@ export default function Recruit() {
 
         {/* Right Column */}
         <div
+          className="recruit-grade-card"
           style={{
             background: '#0E0E0E',
             padding: '40px 32px',
@@ -157,7 +161,7 @@ export default function Recruit() {
             상담사 등급 체계
           </h3>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '32px' }}>
+          <div className="recruit-grade-summary" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '32px' }}>
             <div>
               <div style={{ fontSize: '11px', color: '#888', marginBottom: '6px' }}>GREEN</div>
               <div style={{ fontSize: '18px', fontWeight: 600, color: '#FFFFFF', marginBottom: '4px' }}>그린</div>
@@ -170,7 +174,7 @@ export default function Recruit() {
             </div>
           </div>
 
-          <p style={{ fontSize: '12px', color: '#888', lineHeight: 1.7 }}>
+          <p className="mobile-flow-copy" style={{ fontSize: '12px', color: '#888', lineHeight: 1.7 }}>
             각 등급은 0~6단계로 운영됩니다. 0단계는 기본 등급이며,<br />
             1단계부터는 파트너 계약 및 활동 조건을 충족하면 승급할 수 있습니다.<br />
             단계가 높아질수록 상담 단가와 지원 혜택이 확대됩니다.
@@ -180,6 +184,7 @@ export default function Recruit() {
 
       {/* Recruitment Field Section */}
       <section
+        className="recruit-section recruit-field-section"
         style={{
           width: '100%',
           background: '#F9F3E8',
@@ -226,6 +231,7 @@ export default function Recruit() {
 
           {/* Service Grid */}
           <div
+            className="recruit-service-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
@@ -273,6 +279,7 @@ export default function Recruit() {
 
       {/* Benefits Section */}
       <section
+        className="recruit-section recruit-benefits-section"
         style={{
           width: '100%',
           background: '#FFFFFF',
@@ -307,6 +314,7 @@ export default function Recruit() {
 
           {/* Benefits Grid */}
           <div
+            className="recruit-benefits-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(2, 1fr)',
@@ -349,6 +357,7 @@ export default function Recruit() {
 
       {/* Additional Income Section */}
       <section
+        className="recruit-section recruit-income-section"
         style={{
           width: '100%',
           background: '#F9F3E8',
@@ -357,6 +366,7 @@ export default function Recruit() {
       >
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <h3
+            className="recruit-income-title"
             style={{
               fontSize: 'clamp(24px, 2.5vw, 32px)',
               fontWeight: 600,
@@ -368,6 +378,7 @@ export default function Recruit() {
           </h3>
 
           <div
+            className="recruit-income-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
@@ -415,6 +426,7 @@ export default function Recruit() {
 
       {/* Grade System Section */}
       <section
+        className="recruit-section recruit-grade-section"
         style={{
           width: '100%',
           background: '#FFFFFF',
@@ -459,7 +471,7 @@ export default function Recruit() {
           </p>
 
           {/* Grade Table */}
-          <div style={{ overflowX: 'auto', marginBottom: '40px' }}>
+          <div className="recruit-grade-table-wrap" style={{ overflowX: 'auto', marginBottom: '40px' }}>
             <table
               style={{
                 width: '100%',
@@ -501,6 +513,7 @@ export default function Recruit() {
 
       {/* Payment Info Section */}
       <section
+        className="recruit-section recruit-payment-section"
         style={{
           width: '100%',
           background: '#F9F3E8',
@@ -534,6 +547,7 @@ export default function Recruit() {
           </h2>
 
           <div
+            className="recruit-payment-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
@@ -583,6 +597,7 @@ export default function Recruit() {
 
       {/* Recruitment Process Section */}
       <section
+        className="recruit-section recruit-process-section"
         style={{
           width: '100%',
           background: '#FFFFFF',
@@ -616,6 +631,7 @@ export default function Recruit() {
           </h2>
 
           <div
+            className="recruit-process-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(4, 1fr)',
@@ -668,6 +684,7 @@ export default function Recruit() {
       {/* CTA Section */}
       <section
         ref={ctaSectionRef}
+        className="recruit-cta-section"
         style={{
           width: '100%',
           background: '#0E0E0E',
@@ -735,6 +752,7 @@ export default function Recruit() {
       {/* Sticky CTA Button */}
       {showCTA && (
         <a
+          className="recruit-sticky-cta"
           href="https://www.hongcafe.com/board/recruit"
           target="_blank"
           rel="noopener noreferrer"

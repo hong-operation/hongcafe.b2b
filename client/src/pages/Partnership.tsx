@@ -109,7 +109,7 @@ export default function Partnership() {
   };
 
   return (
-    <div className="site-page" style={{ minHeight: '100vh', background: '#FFFFFF' }}>
+    <div className="site-page page-partnership" style={{ minHeight: '100vh', background: '#FFFFFF' }}>
       <Header />
 
       {/* Hero Section - 2 Column Layout */}

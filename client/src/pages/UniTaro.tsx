@@ -67,11 +67,12 @@ export default function UniTaro() {
   };
 
   return (
-    <div className="site-page" style={{ minHeight: '100vh', background: '#FFFFFF' }}>
+    <div className="site-page page-unitaro" style={{ minHeight: '100vh', background: '#FFFFFF' }}>
       <Header />
 
       {/* Hero Section - 2 Column Layout */}
       <section
+        className="unitaro-hero"
         style={{
           padding: '120px 40px 72px',
           maxWidth: '1080px',
@@ -120,6 +121,7 @@ export default function UniTaro() {
 
           {/* Lead */}
           <p
+            className="unitaro-lead mobile-flow-copy"
             style={{
               fontSize: '15px',
               color: 'rgba(14,14,14,.6)',
@@ -165,6 +167,7 @@ export default function UniTaro() {
 
         {/* Right Column - Info Card */}
         <div
+          className="unitaro-overview-card"
           style={{
             background: '#0E0E0E',
             padding: '40px',
@@ -236,7 +239,7 @@ export default function UniTaro() {
       </section>
 
       {/* Program Details Section */}
-      <section style={{ padding: '88px 40px' }}>
+      <section className="unitaro-provide-section" style={{ padding: '88px 40px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           {/* Eyebrow */}
           <div
@@ -268,6 +271,7 @@ export default function UniTaro() {
 
           {/* Support Boxes Grid */}
           <div
+            className="unitaro-support-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
@@ -334,7 +338,7 @@ export default function UniTaro() {
       </section>
 
       {/* Collaboration Cases Section */}
-      <section style={{ padding: '88px 40px' }}>
+      <section className="unitaro-gallery-section" style={{ padding: '88px 40px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           {/* Eyebrow */}
           <div
@@ -365,6 +369,7 @@ export default function UniTaro() {
 
           {/* Gallery Grid */}
           <div
+            className="unitaro-gallery-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
@@ -497,6 +502,7 @@ export default function UniTaro() {
       {/* CTA Section */}
       <section
         ref={ctaSectionRef}
+        className="unitaro-cta-section"
         style={{
           width: '100%',
           background: '#0E0E0E',
@@ -559,6 +565,7 @@ export default function UniTaro() {
       {/* Sticky CTA Button */}
       {showCTA && (
         <a
+          className="unitaro-sticky-cta"
           href="https://forms.gle/RamLCbA7SbhehbUw8"
           target="_blank"
           rel="noopener noreferrer"
