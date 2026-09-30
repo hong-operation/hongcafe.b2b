@@ -244,7 +244,15 @@ export default function UniTaro() {
       </section>
 
       {/* Program Details Section */}
-      <section className="unitaro-provide-section" style={{ padding: '88px 40px' }}>
+      <section
+        className="unitaro-provide-section"
+        style={{
+          padding: '88px 40px',
+          background: '#EEECE7',
+          borderTop: '1px solid #E1DED7',
+          borderBottom: '1px solid #E1DED7'
+        }}
+      >
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           {/* Eyebrow */}
           <div
