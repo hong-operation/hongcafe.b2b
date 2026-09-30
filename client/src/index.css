@@ -1245,3 +1245,123 @@
   color: rgba(255,255,255,.65);
   font-size: 14px;
 }
+
+/* Mobile in-page image lightbox: keeps the original page and exact scroll position. */
+.mobile-site .m-image-preview-link,
+.mobile-site .m-gallery-card {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  font: inherit;
+}
+
+.m-image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
+  isolation: isolate;
+}
+
+.m-image-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: rgba(8, 8, 8, .96);
+  cursor: zoom-out;
+}
+
+.m-image-lightbox-panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.m-image-lightbox-toolbar {
+  flex: 0 0 auto;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: max(10px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) 10px max(12px, env(safe-area-inset-left));
+  background: rgba(8, 8, 8, .92);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  pointer-events: auto;
+}
+
+.m-image-lightbox-toolbar.is-title-hidden {
+  justify-content: flex-end;
+}
+
+.m-image-lightbox-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgba(255,255,255,.8);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.m-image-lightbox-close {
+  flex: 0 0 auto;
+  min-width: 74px;
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 6px;
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.m-image-lightbox-close > span:first-child {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 300;
+  transform: translateY(-1px);
+}
+
+.m-image-lightbox-canvas {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px max(12px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+  overflow: auto;
+  overscroll-behavior: contain;
+  pointer-events: auto;
+}
+
+.m-image-lightbox-canvas img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 96px);
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MobileCard, MobileEyebrow, MobileLead, MobileMain, MobileSection, MobileTitle } from "../MobileUI";
+import MobileImageLightbox from "../MobileImageLightbox";
 
 const cases = [
   {
@@ -79,6 +80,7 @@ const faqs = [
 
 export default function MobilePartnership() {
   const [open, setOpen] = useState<number | null>(null);
+  const [preview, setPreview] = useState<{ src: string; title: string } | null>(null);
   return <div className="mobile-page-shell"><Header /><MobileMain>
     <MobileSection className="m-first-section"><MobileEyebrow>Program 01 · Partnership</MobileEyebrow><MobileTitle as="h1">파트너십은 단순한 제휴가 <span className="m-gold">아닙니다</span></MobileTitle><MobileLead>홍카페는 파트너와 함께 새로운 연결을 설계하고, 고객과 시장을 이어주는 다리가 됩니다. 파트너와 고객 모두에게 지속 가능한 가치와 경험을 제공합니다.</MobileLead><div className="m-highlight">브랜드와 브랜드가 함께 성장하는 순환 구조 — 홍카페와 함께라면 새로운 시장, 새로운 관계, 그리고 새로운 기회를 경험할 수 있습니다.</div><div className="m-actions"><a href="https://forms.gle/Vr7vrAzJUustKnCS9" target="_blank" rel="noopener noreferrer" className="m-btn m-btn-primary">파트너십 신청하기</a><a href="#how-mobile" className="m-btn m-btn-outline">운영 방식 보기</a></div>
       <MobileCard className="m-overview-card"><span className="m-small-label">PROGRAM OVERVIEW</span>{[["제휴 방식","링크 / QR코드 제공"],["리워드","상담 발생 시 수수료"],["최대 보상","신규 1인당 최대 100만원"],["정산일","매월 20일"],["시작 비용","없음 (무료)"],["지원","전담 파트너 매니저"]].map(([k,v]) => <div className="m-key-row" key={k}><span>{k}</span><b>{v}</b></div>)}</MobileCard>
@@ -100,10 +102,10 @@ export default function MobilePartnership() {
       </div><div className="m-stack m-top-space">{[["🔒","안정성","자동 정산 시스템 기반, 매월 보상 지급"],["📈","높은 수익성","신규 회원 1명당 최대 100만원 보상"],["🌐","확장성","추천 회원이 늘어날수록 파트너 수익 극대화"]].map(([icon,title,desc]) => <MobileCard key={title} className="m-inline-card"><span className="m-icon">{icon}</span><div><h3>{title}</h3><p>{desc}</p></div></MobileCard>)}</div>
     </MobileSection>
 
-    <MobileSection><MobileEyebrow>Partnership Cases</MobileEyebrow><MobileTitle>파트너십 <strong>사례</strong></MobileTitle><MobileLead>다양한 업종에서 홍카페 파트너십을 활용하고 있습니다.</MobileLead><div className="m-stack">{cases.map((item) => <MobileCard className="m-case-card" key={item.name}><div className={`m-image-strip${item.images.length === 1 ? " is-single" : ""}`}>{item.images.map((src,i)=><a className="m-image-preview-link" href={`${import.meta.env.BASE_URL}image-viewer?src=${encodeURIComponent(src)}&title=${encodeURIComponent(`${item.name} 이미지 ${i+1}`)}`} target="_blank" rel="opener" key={src} aria-label={`${item.name} 이미지 ${i+1} 새 창에서 보기`}><img src={src} alt={`${item.name} ${i+1}`} loading="lazy" /></a>)}</div><h3>{item.name}</h3><p>{item.desc}</p></MobileCard>)}</div></MobileSection>
+    <MobileSection><MobileEyebrow>Partnership Cases</MobileEyebrow><MobileTitle>파트너십 <strong>사례</strong></MobileTitle><MobileLead>다양한 업종에서 홍카페 파트너십을 활용하고 있습니다.</MobileLead><div className="m-stack">{cases.map((item) => <MobileCard className="m-case-card" key={item.name}><div className={`m-image-strip${item.images.length === 1 ? " is-single" : ""}`}>{item.images.map((src,i)=>{ const title = `${item.name} 이미지 ${i+1}`; return <button type="button" className="m-image-preview-link" onClick={() => setPreview({ src, title })} key={src} aria-label={`${title} 크게 보기`}><img src={src} alt={`${item.name} ${i+1}`} loading="lazy" /></button>; })}</div><h3>{item.name}</h3><p>{item.desc}</p></MobileCard>)}</div></MobileSection>
 
     <MobileSection tone="soft"><MobileTitle>자주 묻는 질문</MobileTitle><div className="m-faq-list">{faqs.map(([q,a],idx)=><div className="m-faq" key={q}><button type="button" onClick={()=>setOpen(open===idx?null:idx)}><span>{q}</span><b>{open===idx?"−":"+"}</b></button>{open===idx&&<p>{a}</p>}</div>)}</div></MobileSection>
 
     <MobileSection tone="dark" className="m-center"><MobileTitle>파트너십 <span className="m-gold">신청하기</span></MobileTitle><MobileLead light>지금 바로 홍카페 파트너가 되어 새로운 수익 기회를 만들어보세요.</MobileLead><a href="https://forms.gle/Vr7vrAzJUustKnCS9" target="_blank" rel="noopener noreferrer" className="m-btn m-btn-primary">신청하기</a></MobileSection>
-  </MobileMain><Footer /></div>;
+  </MobileMain><Footer /><MobileImageLightbox src={preview?.src ?? null} alt={preview?.title ?? "파트너십 사례 이미지"} title={preview?.title} onClose={() => setPreview(null)} /></div>;
 }
