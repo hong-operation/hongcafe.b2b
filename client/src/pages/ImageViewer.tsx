@@ -23,8 +23,13 @@ export default function ImageViewer() {
           type="button"
           className="image-viewer-close"
           onClick={() => {
-            if (window.history.length > 1) window.history.back();
-            else window.close();
+            // The viewer is opened in a separate same-origin tab.
+            // Focus the original page first, then close only this viewer tab so
+            // the original page keeps its exact scroll position.
+            if (window.opener && !window.opener.closed) {
+              window.opener.focus();
+            }
+            window.close();
           }}
         >
           닫기
